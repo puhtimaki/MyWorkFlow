@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Randomizer</title>
+  </head>
+  <body>
+    
+    <div class="container">
+        <div class="password-generator">
+            <div class = "heading">
+               <h1>My Workflow</h1>
+            </div>
+          <div class="password">
+            <p id="passwordBox"></p><i class="far fa-clipboard" onclick="copyPassword()"></i></i>
+          </div>
+          <div>
+            <label for="length">Length</label>
+            <input type="number" id="length" min="6" max="20" value="8">
+          </div>
+          <div>
+            <label for="symbol">Include Symbol</label>
+            <input type="checkbox" id="symbol" checked>
+          </div>
+          <div>
+            <label for="number">Include Number</label>
+            <input type="checkbox" id="number" checked>
+          </div>
+          <div>
+            <label for="lowerCase">Include lowerCase</label>
+            <input type="checkbox" id="lowerCase" checked>
+          </div>
+          <div>
+            <label for="upperCase">Include upperCase</label>
+            <input type="checkbox" id="upperCase" checked>
+          </div>
+          <button class ="btnGenerate" onclick="createPassword()">Generate</button>
+          <button class = "btnEmail" onclick="SendEmail()">Send via email</button>
+          
+          
+        </div>
+      </div>
+      <script type = "text/javascript">
+        document.querySelector('.btnEmail').style.display = 'none'
+        document.querySelector('.btnGenerate').addEventListener('click', showEmail)
+        
+            </script>
+  </body>
+</html>
