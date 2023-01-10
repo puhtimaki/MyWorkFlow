@@ -8,48 +8,61 @@
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-    <title>Randomizer</title>
+    <title>My Workflow</title>
   </head>
   <body>
     
-    <div class="container">
-        <div class="password-generator">
+    <div id="container">
+
+    
             <div class = "heading">
                <h1>My Workflow</h1>
             </div>
-          <div class="password">
-            <p id="passwordBox"></p><i class="far fa-clipboard" onclick="copyPassword()"></i></i>
-          </div>
-          <div>
-            <label for="length">Length</label>
-            <input type="number" id="length" min="6" max="20" value="8">
-          </div>
-          <div>
-            <label for="symbol">Include Symbol</label>
-            <input type="checkbox" id="symbol" checked>
-          </div>
-          <div>
-            <label for="number">Include Number</label>
-            <input type="checkbox" id="number" checked>
-          </div>
-          <div>
-            <label for="lowerCase">Include lowerCase</label>
-            <input type="checkbox" id="lowerCase" checked>
-          </div>
-          <div>
-            <label for="upperCase">Include upperCase</label>
-            <input type="checkbox" id="upperCase" checked>
-          </div>
-          <button class ="btnGenerate" onclick="createPassword()">Generate</button>
-          <button class = "btnEmail" onclick="SendEmail()">Send via email</button>
-          
-          
+
+            <div class = "weather">
+              <h3>Weather today:</h3>
+
+           </div>
+
+           <div class="todo">
+            <p>Urgent To Do</p>
+            
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="text" id="fname" name="fname"><br><br>
+
+            
+                      </div>
+
+           <div class="links">
+            <h4>Links:</h4>
+            <ul style="list-style: none;">
+
+              <li><a href="https://puhtimaki.github.io/Randomize/" target="_blank">Randomize</a></li>
+              <li><a href="https://sailo.wapice.com/#/" target="_blank">Sailo</a></li>
+              <li><a href="https://my.iot-ticket.com/" target="_blank">My.iot</a></li>
+              <li><a href="https://try.iot-ticket.com/" target="_blank">Try.iot</a></li>
+              <li><a href="https://puhtimaki.github.io/eatit/" target="_blank">EatIt</a></li>
+               
+
+            </ul>
+
         </div>
-      </div>
-      <script type = "text/javascript">
-        document.querySelector('.btnEmail').style.display = 'none'
-        document.querySelector('.btnGenerate').addEventListener('click', showEmail)
         
-            </script>
+
+
+         <div class="footer">
+<p>© juho.codes</p>
+         </div>
+          
+          
+        
+      </div>
+   
   </body>
 </html>

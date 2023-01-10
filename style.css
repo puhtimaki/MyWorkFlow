@@ -3,12 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  
 }
 
-.container {
-  display: flex;
+#container {
+ /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
+  padding-top:200px;
   height: 100vh;
   background: radial-gradient(
     circle at -4% -12.9%,
@@ -18,52 +20,72 @@
 }
 
 .heading {
+  color: #000;
+  background-color: #fff;
+  padding-bottom: 1px;
+  border-radius: 25px;
+  padding-left:20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+ width: 20%;
+
+ 
 }
 
-.password-generator {
-  color: white;
-  font-size: 20px;
-}
-
-.password-generator div {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-}
-
-.password {
-  min-width: 280px;
-  color: black;
-  background-color: white;
-  border-radius: 20px;
-}
-
-.password p {
-  padding: 6px 10px;
-}
-
-.password i {
-  padding: 6px 10px;
-}
-
-.password-generator button {
-  background-color: #000;
+.weather {
   color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 15px;
-  min-height: 30px;
-  min-width: 120px;
-}
-
-.password-generator button:hover {
-  outline-color: transparent;
-  outline-style: solid;
-  box-shadow: 0 0 0 2px #000;
-  transition: 0.2s;
-}
-
-input[type='number' i] {
-  border-radius: 20px;
+  padding-top: 25px;
+  padding-bottom: 1px;
+  border-radius: 25px;
   text-align: center;
 }
+
+
+.todo {
+  color: #fff;
+  padding-top: 25px;
+  padding-bottom: 1px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.links {
+  color: #fff;
+padding-bottom: 1px;
+  border-radius: 25px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  list-style-type: none;
+  list-style: none;
+ width: 30%
+}
+
+
+a {
+  color: #fff;
+  text-decoration:none;
+}
+
+
+
+.footer {
+  color: #fff;
+  padding-top: 25px;
+  padding-bottom: 1px;
+  padding-top: 150px;
+  border-radius: 25px;
+  text-align: center;
+  font-size:10px;
+  width: 99%;
+ 
+
+}
+
+
+
+
+
+
+
