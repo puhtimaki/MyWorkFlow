@@ -10,7 +10,7 @@
     />
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+
     <title>My Workflow</title>
   </head>
   <body>
@@ -24,14 +24,14 @@
       </div>
       <div id="apiweather"></div>
 
-      <div class="todo">
+      <div id="newtask">
         <p style="color: #fff;">Urgent To Do</p>
 
-        <input type="text" id="fname" name="fname" />
-
-        <br />
-        <br />
+        <input id="myinput" type="text" size="40" placeholder="Input task" />
+        <button id="push">Add</button>
       </div>
+      <div id="tasks"></div>
+      <script src="script.js"></script>
 
       <div class="links">
         <h4>Links:</h4>
