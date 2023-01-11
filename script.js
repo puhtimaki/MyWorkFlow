@@ -31,6 +31,23 @@ makeAPICall()
 
 
 
+window.onload = function(){
+  let tasks = JSON.parse(localStorage.getItem('tasks'));
+if (tasks === null || !Array.isArray(tasks)) {
+  tasks = [];
+}
+  tasks.forEach(function(task) {
+    document.querySelector('#tasks').innerHTML += `
+    <div class="task">
+      <span id="taskname">${task}</span>
+      <button class="delete">
+        <i class="fa fa-check"></i>
+      </button>
+    </div>`;
+  });
+}
+
+
 
 let myinput = document.getElementById('myinput')
 let mybtn = document.getElementById('push')
@@ -60,6 +77,9 @@ document.querySelector('#push').onclick = function () {
     for (let i = 0; i < current_tasks.length; i++) {
       current_tasks[i].onclick = function () {
         this.parentNode.remove()
+        if(tasks.length === 0)
+  localStorage.removeItem('tasks');
+
       }
     }
   }
