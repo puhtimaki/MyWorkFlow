@@ -31,7 +31,7 @@
 }
 
 #weather {
-  color: #000;
+  color: #fff;
   padding-top: 25px;
   padding-bottom: 1px;
   border-radius: 25px;
@@ -39,7 +39,7 @@
 }
 
 #apiweather {
-  color: #000;
+  color: #fff;
   border-radius: 25px;
   text-align: center;
 }
