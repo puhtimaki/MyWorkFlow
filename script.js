@@ -14,6 +14,24 @@ async function makeAPICall() {
 
 makeAPICall()
 
+
+
+
+// const saveditems = document.querySelectorAll('#tasks');
+
+// localStorage.setItem('#tasks', JSON.stringify(saveditems));
+// localStorage.getItem('#tasks');
+
+
+// let todos = [];
+// const todosJson = localStorage.getItem('#tasks');
+// if(todosJson){
+//     todos = JSON.parse(todosJson);
+// }
+
+
+
+
 let myinput = document.getElementById('myinput')
 let mybtn = document.getElementById('push')
 myinput.addEventListener('keyup', (e) => {
