@@ -14,31 +14,50 @@ async function makeAPICall() {
 
 makeAPICall()
 
-// Load
-let tasks = [];
-localStorage.getItem('tasks')
+function fetchTasks() {
+  tasks = JSON.parse(localStorage.getItem('tasks')) || []
+  let taskList = document.querySelector('#tasks')
+  taskList.innerHTML = ''
+  tasks.forEach((task) => {
+    taskList.innerHTML += `
+    <div class="task" data-id="${task.id}">
+    <span id ="taskname">
+    ${task.text}</span>
+    <button class = "delete">
+    <i class="fa fa-check"></i></button>
+    </div>`
+  })
 
-if (!tasks.length) {
-  console.error("No tasks loaded")
+  const taskElements = document.querySelectorAll('.task')
+  taskElements.forEach((taskEl) => {
+    const deleteBtn = taskEl.querySelector('.delete')
+    deleteBtn.addEventListener('click', (e) => {
+      const taskId = taskEl.getAttribute('data-id')
+      deleteTask(taskId)
+      taskEl.remove()
+      localStorage.setItem('tasks', JSON.stringify(tasks))
+    })
+  })
 }
 
+// Load
+let tasks = JSON.parse(localStorage.getItem('tasks')) || []
+fetchTasks()
 // Add
 const addTask = (task) => {
   tasks.push(task)
-  updateStorage()
+  localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
 // Delete
-const deleteTask = (task) => {
-  // filter out the task we want to delete
-  tasks = tasks.filter(t => t.id != task.id)
-  updateStorage()
+const deleteTask = (taskId) => {
+  tasks = tasks.filter((t) => t.id != taskId)
 }
 
 const updateStorage = () => {
   const stringified = JSON.stringify(tasks)
   localStorage.setItem('tasks', stringified)
-  console.log("storage updated")
+  console.log('storage updated')
 }
 
 let myinput = document.getElementById('myinput')
@@ -54,10 +73,12 @@ document.querySelector('#push').onclick = function () {
   if (document.querySelector('#newtask input').value.length == 0) {
     alert('Please enter a task')
   } else {
-
-    const newTask = {id: Date.now(), text: document.querySelector('#newtask input').value}
+    const newTask = {
+      id: Date.now(),
+      text: document.querySelector('#newtask input').value,
+    }
     addTask(newTask)
-
+    localStorage.setItem('tasks', JSON.stringify(tasks))
     document.querySelector('#tasks').innerHTML += `
    
     <div class="task">
@@ -72,8 +93,11 @@ document.querySelector('#push').onclick = function () {
     const current_tasks = document.querySelectorAll('.delete')
     for (let i = 0; i < current_tasks.length; i++) {
       current_tasks[i].onclick = function () {
-        deleteTask(newTask)
-        this.parentNode.remove()
+        const taskElement = this.closest('.task')
+        const taskId = taskElement.getAttribute('data-id')
+        deleteTask(taskId)
+        taskElement.remove()
+        localStorage.setItem('tasks', JSON.stringify(tasks))
       }
     }
   }
