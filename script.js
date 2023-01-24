@@ -23,8 +23,11 @@ function fetchTasks() {
     <div class="task" data-id="${task.id}">
     <span id ="taskname">
     ${task.text}</span>
+    <button class = "edit">
+    <i class="fa fa-edit"></i></button>
     <button class = "delete">
     <i class="fa fa-check"></i></button>
+    <span id ="newDate">${new Date(task.id).toLocaleDateString()}</span>
     </div>`
   })
 
@@ -77,6 +80,7 @@ document.querySelector('#push').onclick = function () {
       id: Date.now(),
       text: document.querySelector('#newtask input').value,
     }
+
     addTask(newTask)
     localStorage.setItem('tasks', JSON.stringify(tasks))
     document.querySelector('#tasks').innerHTML += `
@@ -84,8 +88,11 @@ document.querySelector('#push').onclick = function () {
     <div class="task">
     <span id ="taskname">
     ${document.querySelector('#newtask input').value}</span>
+    <button class = "edit">
+<i class="fa fa-edit"></i></button>
 <button class = "delete">
 <i class="fa fa-check"></i></button>
+<span id ="addDate">${new Date(newTask.id).toLocaleDateString()}</span>
 </div>`
 
     document.querySelector('#myinput').value = ''
