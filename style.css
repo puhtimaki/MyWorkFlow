@@ -93,7 +93,7 @@
   font-weight: 400;
 }
 .task button {
-  background-color: gray;
+  background-color: rgb(3, 142, 80);
   color: #ffffff;
   border: none;
   cursor: pointer;
@@ -103,10 +103,13 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.fa-edit {
+
+#edit {
   border: none;
   outline: none;
   height: 100%;
+  background-color: rgb(15, 94, 120);
+  color: #fff;
   width: 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -123,9 +126,9 @@
 
 #newDate {
   color: #fff;
-  padding-top: 25px;
-  padding-bottom: 1px;
-  border-radius: 25px;
+  border-radius: 15px;
+  width: 20px;
+  height: 10px;
   text-align: center;
   font-style: italic !important;
 

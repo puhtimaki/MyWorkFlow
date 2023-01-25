@@ -23,7 +23,7 @@ function fetchTasks() {
     <div class="task" data-id="${task.id}">
     <span id ="taskname">
     ${task.text}</span>
-    <button class = "edit">
+    <button id = "edit">
     <i class="fa fa-edit"></i></button>
     <button class = "delete">
     <i class="fa fa-check"></i></button>
@@ -38,6 +38,15 @@ function fetchTasks() {
       const taskId = taskEl.getAttribute('data-id')
       deleteTask(taskId)
       taskEl.remove()
+      localStorage.setItem('tasks', JSON.stringify(tasks))
+    })
+    const editBtn = document.querySelector('#edit')
+    editBtn.addEventListener('click', (e) => {
+      const taskId = taskEl.getAttribute('data-id')
+      const newText = taskEl.querySelector('#taskname').value
+      console.log('edit has been clicked')
+      prompt(document.querySelector('#taskname').value)
+      taskEl.querySelector('#taskname').value = ''
       localStorage.setItem('tasks', JSON.stringify(tasks))
     })
   })
@@ -55,6 +64,16 @@ const addTask = (task) => {
 // Delete
 const deleteTask = (taskId) => {
   tasks = tasks.filter((t) => t.id != taskId)
+}
+
+//update task
+const updateTask = (taskId, newText) => {
+  tasks = tasks.map((t) => {
+    if (t.id == taskId) {
+      t.text = newText
+    }
+    return t
+  })
 }
 
 const updateStorage = () => {
@@ -88,7 +107,7 @@ document.querySelector('#push').onclick = function () {
     <div class="task">
     <span id ="taskname">
     ${document.querySelector('#newtask input').value}</span>
-    <button class = "edit">
+    <button id = "edit">
 <i class="fa fa-edit"></i></button>
 <button class = "delete">
 <i class="fa fa-check"></i></button>
