@@ -45,7 +45,6 @@ function fetchTasks() {
       const taskId = taskEl.getAttribute('data-id')
       const newText = taskEl.querySelector('#taskname').value
       console.log('edit has been clicked')
-      prompt(document.querySelector('#taskname').value)
       taskEl.querySelector('#taskname').value = ''
       localStorage.setItem('tasks', JSON.stringify(tasks))
     })
@@ -125,6 +124,15 @@ document.querySelector('#push').onclick = function () {
         taskElement.remove()
         localStorage.setItem('tasks', JSON.stringify(tasks))
       }
+      const editBtn = document.querySelector('#edit')
+      editBtn.addEventListener('click', (e) => {
+        const taskElement = this.closest('.task')
+        const taskId = taskElement.getAttribute('data-id')
+        const newText = taskElement.querySelector('#taskname').value
+        console.log('edit has been clicked')
+        taskElement.querySelector('#taskname').value = ''
+        localStorage.setItem('tasks', JSON.stringify(tasks))
+      })
     }
   }
 }
