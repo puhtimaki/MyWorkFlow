@@ -45,6 +45,8 @@ function fetchTasks() {
       const taskId = taskEl.getAttribute('data-id')
       const newText = taskEl.querySelector('#taskname').value
       console.log('edit has been clicked')
+      document.querySelector('.myedit').style.display = ''
+      document.querySelector('.btnedit').style.display = ''
       taskEl.querySelector('#taskname').value = ''
       localStorage.setItem('tasks', JSON.stringify(tasks))
     })
@@ -129,6 +131,9 @@ document.querySelector('#push').onclick = function () {
         const taskElement = this.closest('.task')
         const taskId = taskElement.getAttribute('data-id')
         const newText = taskElement.querySelector('#taskname').value
+        document.querySelector('.myedit').style.display = ''
+        document.querySelector('.btnedit').style.display = ''
+
         console.log('edit has been clicked')
         taskElement.querySelector('#taskname').value = ''
         localStorage.setItem('tasks', JSON.stringify(tasks))
